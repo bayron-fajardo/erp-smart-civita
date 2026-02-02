@@ -1,5 +1,6 @@
+{% extends 'layout.html'%}
 {% load static %}
-<!DOCTYPE html>
+
 
 <!-- =========================================================
 * Sneat - Bootstrap 5 HTML Admin Template - Pro | v1.0.0
@@ -13,60 +14,8 @@
 =========================================================
  -->
 <!-- beautify ignore:start -->
-<html
-  lang="en"
-  class="light-style layout-menu-fixed"
-  dir="ltr"
-  data-theme="theme-default"
-  data-assets-path="../assets/"
-  data-template="vertical-menu-template-free"
->
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
-    />
 
-    <title>Dashboard - Analytics | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
-
-    <meta name="description" content="" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon/favicon.ico' %}" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!-- Icons. Uncomment required icon fonts -->
-    <link rel="stylesheet" href="{% static 'css/boxicons.css'%}" />
-
-    <!-- Core CSS -->
-    <link rel="stylesheet" href="{% static 'css/core.css'%}" class="template-customizer-core-css" />
-    <link rel="stylesheet" href="{% static 'css/theme-default.css '%}" class="template-customizer-theme-css" />
-    <link rel="stylesheet" href="{% static 'css/demo.css'%}" />
-
-    <!-- Vendors CSS -->
-    <link rel="stylesheet" href="{% static  'libs/perfect-scrollbar/perfect-scrollbar.css'%}" />
-
-    <link rel="stylesheet" href="{% static 'libs/apex-charts/apex-charts.css'%}" />
-
-    <!-- Page CSS -->
-
-    <!-- Helpers -->
-    <script src="{% static 'js/vendor/helpers.js'%}"></script>
-
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="{% static 'js/config.js'%}"></script>
-  </head>
-
-  <body>
+    {% block content%}
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
       <div class="layout-container">
@@ -1090,7 +1039,7 @@
                         </li>
                         <li class="d-flex">
                           <div class="avatar flex-shrink-0 me-3">
-                            <img src="{% static 'img/icons/unicons/cc-warning.png '%}" alt="User" class="rounded" />
+                            <img src="{% static 'img/icons/unicons/cc-warning.png'%}" alt="User" class="rounded" />
                           </div>
                           <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div class="me-2">
@@ -1165,27 +1114,8 @@
         >Upgrade to Pro</a
       >
     </div>
+    {% block extra_js%}
+    <script src="{% static 'js/dashboards-analytics.js' %}"></script>
+    {% endblock %}
 
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
-    <script src="{% static 'libs/jquery/jquery.js'%}"></script>
-    <script src="{% static 'libs/popper/popper.js'%}"></script>
-    <script src="{% static 'js/vendor/bootstrap.js' %}"></script>
-    <script src="{% static 'libs/perfect-scrollbar/perfect-scrollbar.js'%}"></script>
-
-    <script src="{% static 'js/vendor/menu.js'%}"></script>
-    <!-- endbuild -->
-
-    <!-- Vendors JS -->
-    <script src="{% static 'libs/apex-charts/apexcharts.js'%}"></script>
-
-    <!-- Main JS -->
-    <script src="{% static 'js/main.js'%}"></script>
-
-    <!-- Page JS -->
-    <script src="{% static 'js/dashboards-analytics.js'%}"></script>
-
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-  </body>
-</html>
+  {% endblock %}
