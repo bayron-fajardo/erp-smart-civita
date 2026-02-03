@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block title %}Eliminar Permiso{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h2>Eliminar Permiso</h2>
+        </div>
+    </div>
+
+    <div class="card border-danger">
+        <div class="card-body">
+            <div class="alert alert-warning">
+                <strong>¿Está seguro de que desea eliminar este permiso?</strong>
+                <p class="mb-0">Esta acción no se puede deshacer.</p>
+            </div>
+            
+            <p><strong>Permiso:</strong> {{ permiso.name }}</p>
+            <p><strong>Código:</strong> <code>{{ permiso.codename }}</code></p>
+
+            <form method="post">
+                {% csrf_token %}
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                    <a href="{% url 'lista_permisos' %}" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

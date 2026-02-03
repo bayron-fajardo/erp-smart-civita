@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.core.apps.CoreConfig', #Para crear más apps agregarlas de esta forma
+    'apps.core.apps.CoreConfig',
+    'apps.roles_permisos.apps.RolesPermisosConfig', #Para crear más apps agregarlas de esta forma
 ]
 
 MIDDLEWARE = [
